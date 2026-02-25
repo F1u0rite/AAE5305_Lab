@@ -74,6 +74,7 @@ sudo dfu-util -d 0483:df11 -a 0 -s 0x08004000 -D ~/Downloads/cf2-2025.12.1.bin
 ### 3.2.1 安装conda及其环境
 #### 3.2.1.1 conda安装
 1、安装conda
+
 在终端输入
 ```bash
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -89,6 +90,7 @@ conda --version
 #如果看到conda 25.x.x则证明安装完成了
 ```
 2、创建conda环境
+
 在终端输入
 ```bash
 git clone https://github.com/F1u0rite/AAE5305_Lab.git
@@ -98,6 +100,7 @@ cd AAE5305_Lab
 conda env create -f environment.yml
 ```
 3、验证conda环境
+
 在终端输入
 ```bash
 conda env list
@@ -115,7 +118,9 @@ which python
 ```
 这证明正常进入到了conda环境中
 4、进阶（一般可以不做）
+
 如果不想每次进入终端都进入conda的base环境，请执行以下操作
+
 在终端输入
 ```bash
 cd ~/
