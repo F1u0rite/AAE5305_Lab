@@ -117,6 +117,7 @@ which python
 ~/miniconda3/envs/aae5305/bin/python
 ```
 这证明正常进入到了conda环境中
+
 4、进阶（一般可以不做）
 
 如果不想每次进入终端都进入conda的base环境，请执行以下操作
