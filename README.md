@@ -10,6 +10,7 @@
 
 ### 3.1.1 Crazyradio
  对于Crazyradio的更新官网上有详细的教程，地址如下：
+ 
  https://www.bitcraze.io/documentation/tutorials/getting-started-with-crazyradio-2-0/
 ### 3.1.2 Crazyfile
 对于Crazyfile有两种更新的方式，具体如下：
@@ -38,6 +39,7 @@ lsusb
 ID 0483:df11 STMicroelectronics STM32 Bootloader
 ```
 7、在下面的网址找到2025.12.1，然后下载**firmware-cf2-2025.12.1.zip**
+
 https://github.com/bitcraze/crazyflie-release/releases
 
 8、将压缩包中的**cf2-2025.12.1.bin**解压，解压以后的默认路径应该是
