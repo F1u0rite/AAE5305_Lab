@@ -8,6 +8,8 @@
 1、ARRAY NOT FOUND的具体原因是系统库自带matplotlib需要在numpy 1.x的版本下运行，而Crazyfile运行所使用的cflib是要在numpy 2.x版本下才可以运行。所以在将numpy的版本降低到1.x以后nicegui仍然是白屏状态。
 
 2、对于飞机在NUC旁边很难连上Crazyradio的原因是2.4G的信道干扰，将飞机远离NUC即可。
+
+3、运行nice gui问题：在运行 ros2 launch crazyflie launch.py 指令之前需要将cfclient完全关掉（在终端中用ctrl+c关掉，只关掉cflcient 的GUI是不行的），若GUI中飞机为红色时则表示通信没有完全连接，此时cfclient和launch.py在抢飞机的通信。关掉cflient后运行launch.py后GUI中无人机显示为绿色，此时运行ros2 run crazyflie_examples hello_world可以实现飞机起飞。
 # 3 解决方法
 ## 3.1 更新固件
 
@@ -28,7 +30,15 @@ cfclient
 
 2、点击左上角的**Connect - Bootloader**选项卡，然后进入Crazyfile Service。确保在Crazyfile connection下的Status是Connected。
 
-3、在Firmware source下选择cf2平台，Available downloads选择最新的，即2025.12.1版本。
+3.1.1、线上固件更新:在Firmware source下选择cf2平台，Available downloads选择最新的，即2025.12.1版本。
+
+3.2.1、本地固件更新：在下面的网址找到2025.12.1，然后下载**firmware-cf2-2025.12.1.zip**
+
+https://github.com/bitcraze/crazyflie-release/releases
+
+3.2.2、解压文件，找到其中的cf2_2025.12.1.bin。
+
+3.2.3、在Crazyfile Service 中选择From File，找到上面提到的 cf2_2025.12.1.bin，不要选cf2_nrf-xxxx.xx.bin。
 
 4、点击Program按钮进行固件的更新。
 #### 3.1.2.2 方法二
@@ -40,7 +50,7 @@ cfclient
 
 3、继续按住复位按钮约 ‌2-3秒‌，然后松开。
 
-4、此时，Crazyflie的LED指示灯通常会显示特定的闪烁模式，表明设备已进入DFU模式。
+4、此时，Crazyflie的M2的LED指示灯通常会显示特定的蓝灯闪烁模式，表明设备已进入DFU模式。
 
 5、在终端输入
 ```bash
